@@ -8,18 +8,20 @@ public class TrainSensorImpl implements TrainSensor {
 
 	private TrainController controller;
 	private TrainUser user;
-	private int speedLimit = 5;
+	//Itt inicializaljuk a sebesseghatart
+	private int speedLimit = 10;
 
 	public TrainSensorImpl(TrainController controller, TrainUser user) {
 		this.controller = controller;
 		this.user = user;
 	}
-
+	//Ezzel lehet lekerni a sebesseghatart
 	@Override
 	public int getSpeedLimit() {
 		return speedLimit;
 	}
 
+	//Ezzel atirjuk a sebesseghatart
 	@Override
 	public void overrideSpeedLimit(int speedLimit) {
 		this.speedLimit = speedLimit;
