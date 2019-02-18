@@ -24,6 +24,12 @@ public class TrainSystemTest {
 
 		sensor.overrideSpeedLimit(50);
 	}
+
+	@Test
+	public void our_test() {
+
+		Assert.assertNotNull(user);
+	}
 	
 	@Test
 	public void OverridingJoystickPosition_IncreasesReferenceSpeed() {
