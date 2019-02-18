@@ -9,7 +9,7 @@ public class TrainSensorImpl implements TrainSensor {
 	private TrainController controller;
 	private TrainUser user;
 	//Itt inicializaljuk a sebesseghatart
-	private int speedLimit = 10;
+	private int speedLimit = 15;
 
 	public TrainSensorImpl(TrainController controller, TrainUser user) {
 		this.controller = controller;
