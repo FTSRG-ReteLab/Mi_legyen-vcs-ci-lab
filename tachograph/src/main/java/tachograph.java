@@ -1,6 +1,5 @@
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
-import com.sun.javafx.geom.Vec2d;
 
 import java.util.Date;
 
