@@ -11,6 +11,7 @@ public class TrainSensorImpl implements TrainSensor {
 	//Itt inicializaljuk a sebesseghatart
 	private int speedLimit = 15;
 
+
 	public TrainSensorImpl(TrainController controller, TrainUser user) {
 		this.controller = controller;
 		this.user = user;
@@ -21,11 +22,20 @@ public class TrainSensorImpl implements TrainSensor {
 		return speedLimit;
 	}
 
+
+
 	//Ezzel atirjuk a sebesseghatart
 	@Override
 	public void overrideSpeedLimit(int speedLimit) {
 		this.speedLimit = speedLimit;
-		controller.setSpeedLimit(speedLimit);
+
+		if(!(speedLimit<0) && !(speedLimit>500) && !(speedLimit<controller.getReferenceSpeed()*0.5)){
+			user.setAlarmState(false);
+			controller.setSpeedLimit(speedLimit);
+		}
+		else {
+			user.setAlarmState(true);
+		}
 	}
 
 }
