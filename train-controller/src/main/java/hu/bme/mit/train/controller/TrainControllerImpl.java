@@ -8,6 +8,15 @@ public class TrainControllerImpl implements TrainController {
 	private int referenceSpeed = 0;
 	private int speedLimit = 0;
 
+	public void updateSpeed() {
+		new java.util.Timer().scheduleAtFixedRate(new java.util.TimerTask() {
+			@Override
+			public void run() {
+				followSpeed();
+			}
+		}, 1000, 1000);
+	}
+
 	@Override
 	public void followSpeed() {
 		if (referenceSpeed < 0) {
@@ -43,7 +52,8 @@ public class TrainControllerImpl implements TrainController {
 
 	@Override
 	public void setJoystickPosition(int joystickPosition) {
-		this.step = joystickPosition;		
+		this.step = joystickPosition;
+		updateSpeed();
 	}
 
 }
