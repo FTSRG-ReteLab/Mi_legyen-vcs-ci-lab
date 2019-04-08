@@ -27,7 +27,7 @@ public class TrainControllerImpl implements TrainController {
 		enforceSpeedLimit();
 	}
 
-	public void updateSpeed(){
+	private void updateSpeed(){
 		timer.scheduleAtFixedRate(new TimerTask() {
 			@Override
 			public void run() {
